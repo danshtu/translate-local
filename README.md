@@ -35,6 +35,17 @@ uv run python src/main.py --language ru --backend argos
 The overlay starts near the bottom of the primary display. Drag it with the
 mouse to reposition it. Press Escape or `q` to quit.
 
+Subtitles appear as one continuous stream over three lines. Words that repeat
+from the previous caption are dropped, and new words fade in one at a time,
+paced to keep up with the speaker. When the third line fills, the lines scroll
+up smoothly. Text stays on screen until newer words push it off.
+
+## Test
+
+```sh
+PYTHONPATH=src python -m unittest discover -s tests -t .
+```
+
 ## Choose an audio input
 
 List the CoreAudio devices visible to the app:
